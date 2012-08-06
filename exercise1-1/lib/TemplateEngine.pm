@@ -3,7 +3,7 @@ package TemplateEngine;
 use strict;
 
 sub new {
-  my $class = shift;
+	my $class = shift;
 	my $f = { @_ };
 	open my $fh, $f->{file} or die;
 	bless \$fh, $class;
