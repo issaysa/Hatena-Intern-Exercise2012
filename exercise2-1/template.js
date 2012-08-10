@@ -1,5 +1,5 @@
 var Template = function(input) {
-    this._text = input["source"];
+    this._text = input.source;
 };
 
 
@@ -17,7 +17,7 @@ Template.prototype = {
   		});
 		variables[keys] = escapedStr;
 	}
-    	var html = template.replace(/{%\s(\w+)\s%}/g, function(m, key) {
+    	var html = template.replace(/{%\s*(\w+)\s*%}/g, function(m, key) {
     		var text = variables[key] || '';
     		return text;
     	});
