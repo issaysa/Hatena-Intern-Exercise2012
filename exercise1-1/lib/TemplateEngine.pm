@@ -23,7 +23,7 @@ sub render {
 	my $text;
 	while ( <$fh> ) {
 		chomp;
-		s/{%\s(\w+)\s%}/$var->{$1}/g;
+		s/{%\s*(\w+)\s*%}/$var->{$1}/g;
 		$text .= "$_\n";
 	}
 	chomp $text;
